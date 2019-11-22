@@ -1,56 +1,51 @@
+"use strict"
+
 function passwordIsValid(password){
 
+    var regexConditions = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[\W]).{8,}/;
 
-    
-    var regex = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[\W]).{8,}/;
+    //tests the condition 
+    var conditionTest = regexConditions.test(password);
 
-   // var regex2 = /(?=.*?[\w])(?=.*?[\W])(?=.*?[0-9]) .{8,}/;
-
-    var tester = regex2.test(password);
-
-    console.log(tester);
-
-    
-    
+    if (conditionTest == true){
+        return conditionTest + ", Password is Valid";
+    } else{
+       return conditionTest + ", Password is NOT Valid, did not meet all the requirements";
+    }
 }
-//passwordIsValid("xoLani.s"); 
+
+console.log(passwordIsValid("dfasdfag.s1")); 
 
 
 function passwordIsOkay(password){
+
+    //Declaring each Regular Expression separate
     var capitalLetters = /(?=.*?[A-Z])/;   
     var smallLetters = /(?=.*?[a-z])/
     var specialChar = /\W/;
     var digits = /(?=.*?[0-9])/
     var minLength = /.{8,}/;
 
+
+    //loops through each requirement and increment the counter for every requirement met.
     var counter = 0;
+    var passwordRequirements = [capitalLetters, smallLetters, specialChar, digits, minLength];
 
-    var myArray = [capitalLetters, smallLetters, specialChar, digits, minLength];
-
-    for (var i = 0; i < myArray.length; i++){
+    for (var i = 0; i < passwordRequirements.length; i++){
         
-        if (myArray[i].test(password) == true){
+        if (passwordRequirements[i].test(password) == true){
             counter++; 
         }
-
-    }
-        
-    console.log(counter);
-
-    
-    try{
-
-    if (counter < 3)
-         throw "it doesnt work"
-    }   catch (err){
-        return err;
     }
 
-   
-
-//     if (counter >= 3){
-//         console.log("Password is OKAY because " + counter );
-//     }
-// }
+    //Checks errors and outputs messages if certain conditions are not met.
+    if (minLength.test(password) == false){
+        console.log("Password does not exist or has less than 8 characters");
+    } else if (counter >= 3){
+        console.log("Password is OKAY");
+    } else if(counter < 3){
+        console.log("Password is NOT OKAY, password should meet atleast 3 requirements");
+    }
+          
 }
-console.log(passwordIsOkay("xolani1.Q"));
+passwordIsOkay("3@dAqqqqq");
