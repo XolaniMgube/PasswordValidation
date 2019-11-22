@@ -8,13 +8,24 @@ function passwordIsValid(password){
     var conditionTest = regexConditions.test(password);
 
     if (conditionTest == true){
-        return conditionTest + ", Password is Valid";
+        return conditionTest;
+        
     } else{
-       return conditionTest + ", Password is NOT Valid, did not meet all the requirements";
+       return conditionTest;
+       
     }
 }
 
-console.log(passwordIsValid("dfasdfag.s1")); 
+
+//passwordIsValid fuction testing
+//We are expecting the function to be true because the out password input "xoLAni$100" meets all the required conditions
+describe("passwordIsValid", () =>{
+    it("It should be true ", () =>{
+        expect(passwordIsValid("xoLAni$100")).toBe(true);
+    })
+});
+
+
 
 
 function passwordIsOkay(password){
@@ -39,13 +50,22 @@ function passwordIsOkay(password){
     }
 
     //Checks errors and outputs messages if certain conditions are not met.
-    if (minLength.test(password) == false){
-        console.log("Password does not exist or has less than 8 characters");
+    var lengthTest = minLength.test(password);
+    
+    if (lengthTest == false){
+        return lengthTest
     } else if (counter >= 3){
-        console.log("Password is OKAY");
+        return "Password is OKAY";
     } else if(counter < 3){
-        console.log("Password is NOT OKAY, password should meet atleast 3 requirements");
+        return "Password is NOT OKAY, password should meet atleast 3 requirements";
     }
           
 }
-passwordIsOkay("3@dAqqqqq");
+
+//passwordIsOkay fuction testing
+//We are expecting the function to be false because the password we inputed "xoLAni" in not longer that 8 characters
+describe("passwordIsOkay", () =>{
+    it("It should be true ", () =>{
+        expect(passwordIsOkay("xoLA")).toBe(false);
+    })
+});
