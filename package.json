@@ -1,0 +1,19 @@
+{
+  "name": "passwordvalidation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "passwordValidation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XolaniMgube/PasswordValidation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XolaniMgube/PasswordValidation/issues"
+  },
+  "homepage": "https://github.com/XolaniMgube/PasswordValidation#readme"
+}
