@@ -36,15 +36,21 @@ function passwordIsOkay(password){
     var lengthTest = minLength.test(password);
 
     if (lengthTest == true && counter >= 3){
-        return true;
+        return "The Password is Okay";
     } else if (lengthTest == true && counter < 3){
-        return false;
+        return "The password should meet atleast 3 conditions";
     } else if(lengthTest == false && counter >= 3){
-        return false;
+        return "Password should have a minimum of 8 characters";
     } else{
-        return "Nothing is valid";
+        return "Password too short, less than 3 conditions are met";
     }
           
 }
+
+console.log(passwordIsOkay("xolani"));
+console.log(passwordIsOkay("xolani$100"));
+console.log(passwordIsOkay("xoLAni$100"));
+console.log(passwordIsOkay("xol$100"));
+console.log(passwordIsOkay("xolanixolani"))
 
 module.exports = {passwordIsValid, passwordIsOkay}
