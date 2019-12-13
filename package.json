@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/XolaniMgube/PasswordValidation/issues"
   },
-  "homepage": "https://github.com/XolaniMgube/PasswordValidation#readme"
+  "homepage": "https://github.com/XolaniMgube/PasswordValidation#readme",
+  "dependencies": {
+    "jasmine": "^3.5.0"
+  }
 }
