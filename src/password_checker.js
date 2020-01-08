@@ -47,10 +47,10 @@ function passwordIsOkay(password){
           
 }
 
-console.log(passwordIsOkay("xolani"));
-console.log(passwordIsOkay("xolani$100"));
-console.log(passwordIsOkay("xoLAni$100"));
-console.log(passwordIsOkay("xol$100"));
-console.log(passwordIsOkay("xolanixolani"))
+// console.log(passwordIsOkay("xolani"));
+// console.log(passwordIsOkay("xolani$100"));
+// console.log(passwordIsOkay("xoLAni$100"));
+// console.log(passwordIsOkay("xol$100"));
+// console.log(passwordIsOkay("xolanixolani"))
 
 module.exports = {passwordIsValid, passwordIsOkay}
