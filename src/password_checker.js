@@ -9,7 +9,7 @@ function passwordIsValid(password){
     return conditionTest;
 }
 
-
+console.log(passwordIsValid("Xolanidd#"))
 
 
 function passwordIsOkay(password){
@@ -20,7 +20,6 @@ function passwordIsOkay(password){
     var specialChar = /\W/;
     var digits = /(?=.*?[0-9])/
     var minLength = /.{8,}/;
-
 
     //loops through each requirement and increment the counter for every requirement met.
     var counter = 0;
@@ -43,14 +42,8 @@ function passwordIsOkay(password){
         return "Password should have a minimum of 8 characters";
     } else{
         return "Password too short, less than 3 conditions are met";
-    }
-          
+    }       
 }
 
-// console.log(passwordIsOkay("xolani"));
-// console.log(passwordIsOkay("xolani$100"));
-// console.log(passwordIsOkay("xoLAni$100"));
-// console.log(passwordIsOkay("xol$100"));
-// console.log(passwordIsOkay("xolanixolani"))
 
 module.exports = {passwordIsValid, passwordIsOkay}
